@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Basilea Ministries — For the Kingdom. For the Church. For the World.</title>
+<meta name="description" content="Basilea Ministries exists to strengthen the church from the inside out through pastoral renewal, church equipping, and missional community building.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="styles.css">
+<style>
+/* Homepage-specific styles */
+.hero {
+  min-height: 100vh;
+  display: flex; align-items: center; justify-content: center;
+  text-align: center;
+  background: linear-gradient(170deg, var(--cream) 0%, var(--warm) 50%, var(--warm-dark) 100%);
+  padding: 120px 32px 80px;
+  position: relative; overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute; top: -30%; right: -20%;
+  width: 600px; height: 600px;
+  background: radial-gradient(circle, rgba(184,212,227,0.2) 0%, transparent 70%);
+  border-radius: 50%;
+}
+.hero::after {
+  content: '';
+  position: absolute; bottom: -20%; left: -15%;
+  width: 500px; height: 500px;
+  background: radial-gradient(circle, rgba(197,150,42,0.08) 0%, transparent 70%);
+  border-radius: 50%;
+}
+.hero-content { max-width: 800px; position: relative; z-index: 1; }
+.hero-tagline {
+  font-family: var(--sans); font-size: 12px; font-weight: 600;
+  letter-spacing: 4px; text-transform: uppercase; color: var(--crown-deep);
+  margin-bottom: 24px;
+  opacity: 0; animation: fadeUp 0.8s 0.2s forwards;
+}
+.hero h1 {
+  font-family: var(--serif); font-weight: 500;
+  font-size: clamp(2.4rem, 5vw, 4rem);
+  line-height: 1.2; color: var(--navy);
+  margin-bottom: 24px;
+  opacity: 0; animation: fadeUp 0.8s 0.4s forwards;
+}
+.hero h1 em { font-style: italic; color: var(--teal); }
+.hero p {
+  font-size: 18px; color: var(--text-light);
+  max-width: 600px; margin: 0 auto 40px; line-height: 1.8;
+  opacity: 0; animation: fadeUp 0.8s 0.6s forwards;
+}
+.hero-buttons {
+  display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;
+  opacity: 0; animation: fadeUp 0.8s 0.8s forwards;
+}
+.ss-layout, .cafe-layout {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center;
+}
+.ss-image, .cafe-image {
+  border-radius: 16px; aspect-ratio: 4/3;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--white); font-family: var(--serif);
+  font-size: 20px; font-style: italic; text-align: center;
+  padding: 40px; position: relative; overflow: hidden;
+}
+.ss-image { background: linear-gradient(135deg, var(--crown) 0%, var(--crown-deep) 100%); }
+.ss-image::before { content: '\201CHe restores my soul\201D'; display: block; font-size: 28px; line-height: 1.4; }
+.ss-image::after { content: '\2014 Psalm 23:3'; position: absolute; bottom: 32px; font-size: 14px; font-style: normal; opacity: 0.8; font-family: var(--sans); letter-spacing: 1px; }
+.cafe-image { background: linear-gradient(135deg, var(--gold-soft) 0%, var(--gold) 100%); }
+.cafe-image::before { content: '\201CGo into all the world\201D'; display: block; font-size: 28px; line-height: 1.4; }
+.cafe-image::after { content: '\2014 Mark 16:15'; position: absolute; bottom: 32px; font-size: 14px; font-style: normal; opacity: 0.8; font-family: var(--sans); letter-spacing: 1px; }
+.ss-features { list-style: none; margin-bottom: 32px; }
+.ss-features li {
+  padding: 10px 0; font-size: 15px; color: var(--text-light);
+  display: flex; align-items: flex-start; gap: 12px;
+}
+.ss-features li::before {
+  content: ''; display: block; min-width: 6px; height: 6px;
+  border-radius: 50%; background: var(--teal); margin-top: 9px;
+}
+@media (max-width: 768px) {
+  .ss-layout, .cafe-layout { grid-template-columns: 1fr; }
+  .cafe-layout .cafe-image { order: -1; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="logo-mark">
+      <img src="basilea-logo.png" alt="Basilea Ministries">
+    </a>
+    <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links">
+      <li><a href="#about">Our Work</a></li>
+      <li><a href="shepherds-soul.html">Shepherd's Soul</a></li>
+      <li><a href="cafe-for-christ.html">Café for Christ</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="#involve" class="btn-nav">Partner With Us</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <p class="hero-tagline">Basilea</p>
+    <h1>Strengthening the church<br>from the <em>inside out</em></h1>
+    <p>We care for pastors, equip churches, and plant seeds of the Gospel in the hardest-to-reach places. Because a healthy church changes everything.</p>
+    <div class="hero-buttons">
+      <a href="#about" class="btn btn-primary">Learn More</a>
+      <a href="#involve" class="btn btn-outline">Partner With Us</a>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="container fade-in">
+    <p class="section-label">What We Do</p>
+    <h2 class="section-title">Two initiatives. One Kingdom vision.</h2>
+    <p class="section-text">Basilea (Greek for "kingdom") exists at the intersection of pastoral renewal and global mission. We believe the church must be healthy internally before it can be effective externally. Everything we do flows from that conviction.</p>
+    <div class="about-grid">
+      <div class="about-card">
+        <div class="card-icon">✦</div>
+        <h3>Shepherd's Soul</h3>
+        <p>A pastoral renewal and church equipping ministry based in Southern California. We provide rest and restoration for pastors while training elder boards and congregations to build lasting cultures of care. Because someone needs to care for the ones who care for everyone else.</p>
+        <a href="shepherds-soul.html" class="card-link">Learn more →</a>
+      </div>
+      <div class="about-card">
+        <div class="card-icon">✧</div>
+        <h3>Café for Christ</h3>
+        <p>A specialty coffee shop and church plant initiative in Saitama, Japan — one of the world's largest unreached mission fields. A real café, open to everyone, sharing space with a gospel-centered church. Meeting people where they already are.</p>
+        <a href="cafe-for-christ.html" class="card-link">Learn more →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="stats-bar">
+  <div class="container fade-in">
+    <div class="stat-item">
+      <div class="stat-number">40%</div>
+      <div class="stat-label">of pastors are at<br>high risk of burnout</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">65%</div>
+      <div class="stat-label">of pastors report<br>loneliness & isolation</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">1%</div>
+      <div class="stat-label">of Japan's population<br>is Christian</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">95%</div>
+      <div class="stat-label">of Japanese have<br>never heard the Gospel</div>
+    </div>
+  </div>
+</section>
+
+<!-- SHEPHERD'S SOUL -->
+<section class="shepherds-soul" id="shepherds-soul">
+  <div class="container">
+    <div class="ss-layout fade-in">
+      <div class="ss-image"><!-- Psalm 23 visual placeholder --></div>
+      <div class="ss-content">
+        <p class="section-label">Shepherd's Soul</p>
+        <h2 class="section-title">Caring for those who care for you</h2>
+        <p class="section-text">America's pastors are enduring a quiet crisis. They're burned out, isolated, and aging — and the churches they serve often don't know how to help. Most existing support focuses on the pastor alone. We work on both sides: renewing pastors and equipping the churches around them.</p>
+        <ul class="ss-features">
+          <li>Pastoral renewal retreats for pastors and their spouses</li>
+          <li>Elder board training on the theology and practice of caring for your pastor</li>
+          <li>Sabbatical design and coaching for pastors and church leadership</li>
+          <li>Monthly peer cohorts for mutual encouragement and accountability</li>
+          <li>Congregational seminars on building healthy church cultures</li>
+          <li>Crisis intervention and referral to professional Christian counselors</li>
+        </ul>
+        <a href="mailto:hello@basileaministries.org" class="btn btn-primary">Connect With Us</a>
+        <a href="shepherds-soul.html" class="btn btn-outline" style="margin-left: 12px;">Read the Full Story</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUOTE -->
+<div class="quote-banner fade-in">
+  <blockquote>"Let them do this with joy and not with groaning, for that would be of no advantage to you."</blockquote>
+  <cite>— Hebrews 13:17</cite>
+</div>
+
+<!-- CAFE FOR CHRIST -->
+<section class="cafe" id="cafe">
+  <div class="container">
+    <div class="cafe-layout fade-in">
+      <div class="cafe-content">
+        <p class="section-label">Café for Christ</p>
+        <h2 class="section-title">A coffee shop. A church. A bridge to the Gospel in Japan.</h2>
+        <p class="section-text">Japan is the second largest unreached people group in the world. Ninety-five percent of Japanese have never heard the Gospel. Most have never stepped inside a church — but everyone goes to a café.</p>
+        <p class="section-text" style="margin-top: 16px;">Café for Christ is a real specialty coffee shop in Saitama City, Japan, sharing space with Mustard Seed Christian Church — a newly planted, gospel-centered congregation. The café operates during the week. The church gathers on Sundays. Same space, two distinct missions, one shared vision: meeting people where they already are.</p>
+        <div style="margin-top: 32px;">
+          <a href="cafe-for-christ.html" class="btn btn-primary">Read the Full Story</a>
+          <a href="https://cafe4christ.org" target="_blank" class="btn btn-outline" style="margin-left: 12px;">Visit cafe4christ.org</a>
+        </div>
+      </div>
+      <div class="cafe-image"><!-- Mark 16:15 visual placeholder --></div>
+    </div>
+  </div>
+</section>
+
+<!-- QUOTE 2 -->
+<div class="quote-banner fade-in" style="background: var(--cream);">
+  <blockquote>"The harvest is plentiful, but the laborers are few. Therefore pray earnestly to the Lord of the harvest to send out laborers into his harvest."</blockquote>
+  <cite>— Matthew 9:37–38</cite>
+</div>
+
+<!-- GET INVOLVED -->
+<section class="involve" id="involve">
+  <div class="container fade-in">
+    <p class="section-label">Get Involved</p>
+    <h2 class="section-title">Join us in this work</h2>
+    <p class="section-text">Whether you're a pastor who needs rest, a church that wants to care for its leaders better, or a believer who wants to invest in the Kingdom — there's a place for you here.</p>
+    <div class="involve-grid">
+      <div class="involve-card">
+        <h3>Pray</h3>
+        <p>Join our prayer team. We'll send you monthly updates on specific needs for pastors we're serving, churches we're equipping, and the ministry in Japan.</p>
+      </div>
+      <div class="involve-card">
+        <h3>Give</h3>
+        <p>Your financial partnership makes it possible for us to serve pastors who can't afford help and churches that are just learning to care. Every gift matters.</p>
+      </div>
+      <div class="involve-card">
+        <h3>Partner</h3>
+        <p>Is your church interested in an elder board training, a pastoral retreat, or supporting a café church plant in Japan? Let's talk.</p>
+      </div>
+    </div>
+    <a href="mailto:hello@basileaministries.org" class="btn" style="background: var(--crown); color: var(--navy); font-weight: 700;">Get In Touch</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img src="basilea-logo.png" alt="Basilea Ministries" style="height: 32px; opacity: 0.7;">
+      <p>Basilea Community Solutions is a 501(c)(3) nonprofit organization based in Southern California, operating as Basilea Ministries. We exist to strengthen the church from the inside out — through pastoral renewal, church equipping, and missional community building.</p>
+    </div>
+    <div>
+      <h4>Ministry</h4>
+      <ul>
+        <li><a href="shepherds-soul.html">Shepherd's Soul</a></li>
+        <li><a href="cafe-for-christ.html">Café for Christ</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Connect</h4>
+      <ul>
+        <li><a href="mailto:hello@basileaministries.org">hello@basileaministries.org</a></li>
+        <li><a href="https://cafe4christ.org" target="_blank">cafe4christ.org</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Basilea Community Solutions. All rights reserved.</span>
+    <span>For the Kingdom. For the Church. For the World.</span>
+  </div>
+</footer>
+
+<script>
+// Scroll-triggered fade-ins
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+// Close mobile nav on link click
+document.querySelectorAll('.nav-links a').forEach(a => {
+  a.addEventListener('click', () => {
+    document.querySelector('.nav-links').classList.remove('open');
+  });
+});
+</script>
+
+</body>
+</html>
